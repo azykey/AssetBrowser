@@ -1,0 +1,242 @@
+📦 ASSET BROWSER - Estrutura Completa
+=====================================
+
+AssetBrowser/
+│
+├── 🚀 SCRIPTS DE INICIALIZAÇÃO
+│   ├── start.bat          (Windows - Batch)
+│   └── start.ps1          (Windows - PowerShell)
+│
+├── 📋 CONFIGURAÇÃO
+│   ├── package.json       (Dependências do servidor)
+│   ├── config.js          (Configurações globais)
+│   ├── server.js          (Backend Express + WebSocket)
+│   ├── README.md          (Documentação completa)
+│   ├── QUICKSTART.md      (Guia rápido)
+│   └── .gitignore
+│
+└── 🎨 CLIENTE REACT (client/)
+    ├── package.json                (Dependências do cliente)
+    ├── public/
+    │   └── index.html              (HTML principal)
+    │
+    └── src/
+        ├── index.js                (Entry point)
+        ├── index.css               (Estilos globais)
+        ├── App.js                  (Componente principal - 300+ linhas)
+        └── App.css                 (Estilos da UI - 600+ linhas)
+
+
+🎯 FUNCIONALIDADES
+==================
+
+[✅] ObjectsDepot Viewer
+    ├─ Árvore hierárquica (tree view)
+    ├─ Expandir/colapsar pastas
+    ├─ Ver tamanho de arquivos
+    ├─ Deletar arquivos/pastas
+    └─ Criar novas pastas
+
+[✅] Animations Browser
+    ├─ Lista completa de .anm
+    ├─ Busca rápida
+    ├─ Metadados (tamanho, data)
+    └─ Gerenciamento de arquivos
+
+[✅] Search Global
+    ├─ Busca em todos os assets
+    ├─ Filtro por tipo
+    ├─ Resultados em tempo real
+    └─ Até 100 resultados
+
+[✅] Statistics
+    ├─ Total de arquivos
+    ├─ Tamanho total por categoria
+    └─ Gráfico visual
+
+[✅] Real-time Updates
+    ├─ Monitoramento automático
+    ├─ Hot-reload (poll 5s)
+    ├─ Detecção de mudanças
+    └─ Sincronização instantânea
+
+
+🔌 API ENDPOINTS
+================
+
+GET  /api/objects-depot          → Árvore de ObjectsDepot
+GET  /api/animations             → Lista de animações
+GET  /api/search?q=query         → Busca global
+GET  /api/file-info?path=...     → Info de arquivo
+GET  /api/dir-contents?path=...  → Conteúdo de pasta
+GET  /api/stats                  → Estatísticas globais
+POST /api/create-folder          → Criar pasta
+DEL  /api/file?path=...          → Deletar arquivo
+
+
+🛠️ STACK TECNOLÓGICO
+====================
+
+Backend:
+  ├─ Node.js v18+
+  ├─ Express.js
+  ├─ Chokidar (file watching)
+  ├─ fs-extra (file ops)
+  └─ CORS + Body Parser
+
+Frontend:
+  ├─ React 18
+  ├─ Axios (HTTP)
+  ├─ Lucide Icons (ícones)
+  └─ CSS3 (dark theme)
+
+
+📊 ESTATÍSTICAS DE CÓDIGO
+=========================
+
+Backend:
+  ├─ server.js: ~350 linhas
+  ├─ API endpoints: 8 routers
+  └─ File watching: Real-time
+
+Frontend:
+  ├─ App.js: ~300 linhas
+  ├─ App.css: ~600 linhas
+  ├─ 4 componentes reutilizáveis
+  └─ Responsive design
+
+Total: ~1250+ linhas de código
+
+
+🚀 COMO USAR
+============
+
+1. INSTALAÇÃO
+   cd AssetBrowser
+   npm install
+   cd client && npm install && cd ..
+
+2. INICIAR (Windows)
+   start.bat
+   ou
+   .\start.ps1
+
+3. ACESSAR
+   - Servidor: http://localhost:5000
+   - Cliente:  http://localhost:3000
+
+4. AGUARDAR
+   - Primeira carga: ~15 segundos
+   - Atualizações futuras: ~5 segundos
+
+
+📁 DADOS MONITORADOS
+====================
+
+✓ C:\...\bin\Data\ObjectsDepot\   (todas as subpastas)
+✓ C:\...\bin\Data\Animations5\    (2000+ arquivos .anm)
+✓ C:\...\bin\Data\Models\         (modelos 3D)
+
+Mudanças detectadas automaticamente!
+
+
+🎨 FEATURES VISUAIS
+===================
+
+[Dark Theme]      Interface escura profissional
+[Responsive]      Funciona em desktop e tablet
+[Tree View]       Hierarquia visual com ícones
+[Icons]           Ícones de contexto por tipo
+[Colors]
+  ├─ Pasta:       #f0ad4e (laranja)
+  ├─ Arquivo:     #85b0ff (azul)
+  ├─ Ativo:       #669eea (roxo)
+  └─ Hover:       #2d2d30 (cinza claro)
+
+[Animations]
+  ├─ Expandir:    ChevronRight → ChevronDown
+  ├─ Hover:       Background fade
+  ├─ Scroll:      Smooth scrolling
+  └─ Transitions: 200ms ease
+
+
+⚙️ CONFIGURAÇÕES
+================
+
+Edite `config.js` para customizar:
+
+├─ Portas (padrão: 5000/3000)
+├─ Caminhos de dados
+├─ Extensões de arquivo
+├─ Profundidade da árvore
+├─ Intervalo de atualização
+└─ Tema e UI
+
+
+🔒 SEGURANÇA
+============
+
+✓ Paths validados (dentro de root)
+✓ Sem acesso fora de /Data
+✓ Operações confirmadas (delete)
+✓ Limite de preview (1MB)
+✓ CORS habilitado
+
+
+📝 LOGS
+=======
+
+Servidor: Console do PowerShell
+├─ Startup messages
+├─ API requests
+├─ File changes
+└─ Errors
+
+Cliente: DevTools do Browser
+├─ Component renders
+├─ API responses
+└─ State updates
+
+
+💡 DICAS
+========
+
+1. Use CTRL+F no Tree para buscar rápido
+2. Clique em arquivo para ver detalhes
+3. Hover em delete para confirmar antes
+4. Stats mostra uso total de disco
+5. Buscar filtra todos os assets simultaneamente
+6. Real-time atualiza a cada 5 segundos
+
+
+🐛 TROUBLESHOOTING
+==================
+
+Problema              → Solução
+─────────────────────────────────────────
+Porta 5000 em uso     → Mude em server.js
+Node não instalado    → https://nodejs.org
+Permissão negada      → Execute como Admin
+Assets não aparecem   → Aguarde 10s e refresh
+Crash do cliente      → Verifique console.log
+
+
+📞 PRÓXIMAS MELHORIAS
+====================
+
+□ Upload de arquivos
+□ Renomear arquivos
+□ Mover arquivos entre pastas
+□ Preview de texturas (DDS)
+□ Preview de modelos 3D
+□ Git integration
+□ Versioning de assets
+□ Tags e categorias
+□ Export/Import config
+□ Dark/Light theme toggle
+
+
+═════════════════════════════════════════
+✨ Asset Browser v1.0.0
+Criado para TANAWANT-THONGPING Studio
+═════════════════════════════════════════
